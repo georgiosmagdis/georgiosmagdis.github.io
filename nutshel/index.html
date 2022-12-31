@@ -6,9 +6,16 @@
 -->
 <html>
 	<head>
-		<title>Georgios Magdis | Home</title>
+		<title>Georgios Magdis | For non astronomers</title>
 		
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/head.php';?>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script> 
+		    
+		    $.get('/templates/head.html', function(response) {
+			    $('head').append(response);
+			});
+
+	    </script>
 
 
 		<style type="text/css">
@@ -23,7 +30,11 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/menu_nav.php';?>
+				<script> 
+				    $.get('/templates/menu.html', function(response) {
+					    $('#wrapper').append(response);
+					});
+			    </script>
 					
 
 				<!-- Banner -->
@@ -58,12 +69,32 @@
 						</div>
 					</section>
 				
-					<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php';?>
+					<script>  
+				    $.get('templates/footer.html', function(response) {
+					        $('#wrapper').append(response);
+					});
+				    </script>
 
 			</div>
 
 		<!-- Scripts -->
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/scripts.php';?>
+		 <script>
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			    document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+			  if (!e.target.matches('.dropbtn')) {
+			    var myDropdown = document.getElementById("myDropdown");
+			      if (myDropdown.classList.contains('show')) {
+			        myDropdown.classList.remove('show');
+			      }
+			  }
+			}
+		</script>
 
 	</body>
 </html>

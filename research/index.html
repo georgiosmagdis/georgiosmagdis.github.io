@@ -4,30 +4,45 @@
 	<head>
 		<title>Georgios Magdis</title>
 		
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/head.php';?>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script> 
+		    
+		    $.get('/templates/head.html', function(response) {
+			    $('head').prepend(response);
+			});
+
+	    </script>
 
 
 		<style type="text/css">
 			h3	{
 				color: #242943;
 			}
+			#banner{
+				background-image: url("/images/milky.jpg")!important;	
+			}
+			
 		</style>
 		<style>
-a:hover{
-	color:black!important;
-}
-</style>
+		a:hover{
+			color:black!important;
+		}
+		</style>
 	</head>
 	<body>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/menu_nav.php';?>
+				<script> 
+				    $.get('/templates/menu.html', function(response) {
+					    $('#wrapper').append(response);
+					});
+			    </script>
 					
 
 				<!-- Banner -->
-					<section id="banner" class="major">
+					<section id="banner" class="major" style="background-image:url('/images/milky.jpg')">
 						<div class="inner"  style="background: transparent;">
 							<header class="major">
 								<h1>Research</h1>
@@ -143,12 +158,41 @@ a:hover{
 						</div>
 					</section>
 				
-					<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/footer.php';?>
+					<script> 
+			    
+				    $.get('/templates/footer.html', function(response) {
+					        $('#wrapper').append(response);
+					});
+
+				    </script>
 
 			</div>
 
 		<!-- Scripts -->
-		<?php include $_SERVER['DOCUMENT_ROOT'].'/templates/scripts.php';?>
+
+		<script> 	    
+		    $.get('/templates/scripts.html', function(response) {
+			        //$('body').append(response);
+			});
+	    </script>
+
+	     <script>
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			    document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+			  if (!e.target.matches('.dropbtn')) {
+			    var myDropdown = document.getElementById("myDropdown");
+			      if (myDropdown.classList.contains('show')) {
+			        myDropdown.classList.remove('show');
+			      }
+			  }
+			}
+		</script>
 
 	</body>
 </html>

@@ -7,9 +7,15 @@
 <html>
 	<head>
 		<title>Georgios Magdis | Home</title>
-		
-		<?php include 'templates/head.php';?>
 
+		<script src="/assets/js/jquery.min.js"></script>
+		<script> 
+		    
+		    $.get('templates/head.html', function(response) {
+			    $('head').append(response);
+			});
+
+	    </script>
 
 		<style type="text/css">
 			h3	{
@@ -22,13 +28,17 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<?php include 'templates/menu.php';?>
+				<script> 
+				    $.get('templates/menu.html', function(response) {
+					    $('#wrapper').append(response);
+					});
+			    </script>
 					
 
 				<!-- Banner -->
 					<section id="banner" class="major">
 						<div class="inner"  style="background: transparent;">
-							<img src="/images/m5.png" style="max-width:350px; text-align:center;>
+							<img src="/images/m5.png" style="max-width:350px; text-align:center;">
 							<header class="major" style="background: transparent;">
 								<h1>Georgios E. Magdis</h1>
 							</header>
@@ -36,10 +46,10 @@
 								<ul style="list-style: none; color: white; padding-left:0px; background-transparent;">
 									<li>Associate Professor - Cosmic DAWN Center </li>
 									<li> National Space Instutute (DTU-Space) and  Niels Bohr Institute 
-								(University of Copenhagen)  </li>
+										(University of Copenhagen)  </li>
 									<li>Villum Young Investigator</li>
-									<!-- <li> Carlsberg Fellow</li>				 -->
 									<li>Adjunct Researcher - National Observatory  of Athens </li>
+								</ul>
 
 								<!-- <ul class="actions">
 									<li><a href="#one" class="button next scrolly">Get Started</a></li>
@@ -57,6 +67,7 @@
 									<div class="ibox">
 										<p>
 											Thank you for visiting my website!<br />
+										</p>
 
 										<p>	I am an Associate Professor of astrophysics at the Cosmic DAWN Center, National Space Institute (DTU-Space) and Niels Bohr Institute (University of Copenhagen). For my research I study the formation and evolution of the galaxies since the Big Bang using the best astronomical facilities in the world (and in space). In other words, I join the efforts of some of the brightest minds that I am lucky enough to call friends and colleagues, in order to understand the very origins of our Cosmos. </p>
 
@@ -65,7 +76,7 @@
 
 											<p>Born in Athens, I left Greece in 2005 to pursue my PhD in Astrophysics at the University of Oxford.  The rest						about me and my research can be found below: </p>
 									
-					                <p> 
+					                
 					                	<!-- <a href="research/"> Research </a> <br /> -->
 					                <a href="research/"> Research </a> <br />
 					                <a href="group/"> Group </a> <br />
@@ -75,6 +86,8 @@
 					                <a href="nutshel/"> My science explained for non Astronomers </a><br />
 					                <a href="software/"> Software </a><br />
 									<br />
+
+									<p>
 
 									To navigate you can use the menu at the top right or you can just click the links above. 
 
@@ -88,7 +101,7 @@
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-envelope"></span>
-										<h3>Email</h3>
+										<h3 style="color:#242943;">Email</h3>
 										<a href="#">geoma"at"space.dtu.dk</a>
 										<a href="#">georgios.magdis"at"nbi.ku.dk</a>
 									</div>
@@ -96,22 +109,22 @@
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-phone"></span>
-										<h3>Phone</h3>
+										<h3 style="color:#242943;">Phone</h3>
 										<span>+4535335304</span>
 									</div>
 								</section>
 								<section>
 									<div class="contact-method">
 										<span class="icon alt fa-home"></span>
-										<h3>Address</h3>
+										<h3 style="color:#242943;">Address</h3>
 
 										<span>National Space Institute<br />
 											DTU-Space<br />
 
 										Elektrovej Bygning 327<br />
 										2800 Kongens Lyngby, Denmark</span>
-<br />
-<br />
+										<br />
+										<br />
 
 										<span>University of Copenhagen<br />
 											Niels Bohr Institute<br />
@@ -124,12 +137,33 @@
 						</div>
 					</section>
 				
-				<?php include 'templates/footer.php';?>
+				
+				<script> 
+			    
+			    $.get('templates/footer.html', function(response) {
+				        $('#wrapper').append(response);
+				});
+
+			    </script>
 
 			</div>
 
 		<!-- Scripts -->
-		<?php include 'templates/scripts.php';?>	
+		<!-- <script src="/assets/js/jquery.min.js"></script> -->
+		<script src="/assets/js/jquery.scrolly.min.js"></script>
+		<script src="/assets/js/jquery.scrollex.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+
+
+		<script> 	    
+		    $.get('templates/scripts.html', function(response) {
+			        $('body').append(response);
+			});
+	    </script>
+
 
 	</body>
 </html>

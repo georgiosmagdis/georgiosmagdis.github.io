@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Georgios Magdis | Software</title>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script> 
+		    
+		    $.get('/templates/head.html', function(response) {
+			    $('head').append(response);
+			});
+
+	    </script>
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<script> 
+				    $.get('/templates/menu.html', function(response) {
+					    $('#wrapper').append(response);
+					});
+			    </script>
+					
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>Software</h1>
+							</header>
+							</div>
+					</section>
+
+							<section>
+						<div class="inner">
+
+								 1. <a href="http://georgiosmagdis.pbworks.com/w/page/59019974/SED%20Templates" target="_blank">Redshift dependent IR SED templates of Main Sequence and Starburst galaxies (from Magdis et al. 2012)</a>.
+									<br />
+									2. <a href="http://georgiosmagdis.pbworks.com/w/file/fetch/141131811/sed_qgs_1d10Lsun.txt" target="_blank"> IR SED template of massive quiescent galaxies from Magdis et al. 2020</a>.
+									<br />
+									3. <a href="http://georgiosmagdis.pbworks.com/w/page/59019974/SED%20Templates" target="_blank"> Gas fraction evolutionary tracks of QGs from  Gobat et al. 2020</a>.
+									
+						</div>
+					</section>
+
+				<script>  
+				    $.get('templates/footer.html', function(response) {
+					        $('#wrapper').append(response);
+					});
+				    </script>
+
+			</div>
+
+		<!-- Scripts -->
+		 <script>
+			/* When the user clicks on the button, 
+			toggle between hiding and showing the dropdown content */
+			function myFunction() {
+			    document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+			  if (!e.target.matches('.dropbtn')) {
+			    var myDropdown = document.getElementById("myDropdown");
+			      if (myDropdown.classList.contains('show')) {
+			        myDropdown.classList.remove('show');
+			      }
+			  }
+			}
+		</script>
+
+
+	</body>
+</html>
